@@ -1,0 +1,85 @@
+<div class="game-container">
+  <h2>Juego en Curso</h2>
+
+  <!-- Tarjeta activa -->
+  <div *ngIf="selectedCards.length > 0 && !gameFinished" class="card-container">
+    <div class="card-content">
+      <div class="card-image-container">
+        <img
+          [src]="selectedCards[currentCardIndex].image"
+          alt="{{ selectedCards[currentCardIndex].name }}"
+          class="card-image"
+        />
+      </div>
+
+      <div class="scores-container">
+        <h3>{{ selectedCards[currentCardIndex].name }}</h3>
+        <form *ngIf="scores.length > 0">
+          <div
+            *ngFor="let participantScore of scores[currentCardIndex].participantsScores; let i = index"
+            class="participant-score"
+          >
+            <label>{{ participantScore.name }}</label>
+            <input
+              type="number"
+              [(ngModel)]="participantScore.score"
+              name="score-{{ i }}"
+              class="score-input"
+              placeholder="Puntaje"
+            />
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="navigation-buttons">
+      <button (click)="goToPreviousCard()" [disabled]="currentCardIndex === 0">Atrás</button>
+      <button *ngIf="currentCardIndex < selectedCards.length - 1" (click)="goToNextCard()">Siguiente</button>
+      <button *ngIf="currentCardIndex === selectedCards.length - 1" (click)="finishGame()">Finalizar</button>
+    </div>
+  </div>
+
+  <div class="podium-container" *ngIf="gameFinished">
+    <h2>¡Felicitaciones a los ganadores!</h2>
+    <div class="podium">
+      <div class="podium-level podium-second">
+        <p>{{ sortedParticipants[1].name || '---' }}</p>
+      </div>
+      <div class="podium-level podium-first">
+        <p>{{ sortedParticipants[0].name || '---' }}</p>
+      </div>
+      <div class="podium-level podium-third">
+        <p>{{ sortedParticipants[2].name || '---' }}</p>
+      </div>
+      <img src="assets/podium.png" alt="Podio" class="podium-image" />
+    </div>
+  </div>
+  
+  <!-- Tabla final con puntajes -->
+  <div *ngIf="gameFinished" class="final-scores">
+    <h2 class="scores-title">Tabla Final de Puntajes</h2>
+    <button class="btn-download" (click)="downloadCSV()">Descargar CSV</button>
+    <table>
+      <thead>
+        <tr>
+          <th>Participante</th>
+          <th *ngFor="let card of selectedCards">{{ card.name }}</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let participant of getOrderedParticipants()">
+          <td>{{ participant.name }}</td>
+          <td *ngFor="let card of selectedCards">
+            {{ getScoreForParticipant(participant.name, card) }}
+          </td>
+          <td>{{ participant.total }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+
+  <!-- Botón de regresar -->
+  <button class="back-btn" (click)="goBack()">Regresar</button>
+</div>

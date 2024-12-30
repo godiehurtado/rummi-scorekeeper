@@ -1,0 +1,18 @@
+<div class="game-settings-container">
+    <h2>Configuración del Juego</h2>
+    
+    <div class="card-container">
+      <div class="card" *ngFor="let card of cards; let i = index">
+        <img [src]="card.image" alt="{{ card.name }}" class="card-image" />
+        <div class="card-content">
+          <h3>{{ card.name }}</h3>
+          <input type="checkbox" [(ngModel)]="card.selected" id="card-{{ i }}" (change)="saveSelectedCards()"/>
+          <label for="card-{{ i }}">Seleccionar</label>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Botón de regresar -->
+    <button class="back-btn" (click)="goBack()">Regresar</button>
+  </div>
+  

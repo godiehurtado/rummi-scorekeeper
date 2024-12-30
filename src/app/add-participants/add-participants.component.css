@@ -1,0 +1,99 @@
+.add-participants-container {
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 80px;
+  }
+  
+  input {
+    padding: 10px;
+    margin: 10px;
+    font-size: 1rem;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 5px;
+    border: 1px solid gold;
+  }
+  
+  button {
+    background-color: gold;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  
+  button:hover {
+    background-color: #f1c40f;
+  }
+  
+  table {
+    width: 50%;
+    margin: 20px auto;
+    border-collapse: collapse; /* Para bordes sin separación */
+  }
+  
+  th {
+    background-color: black;
+    color: gold;
+    font-size: 1.2rem;
+    padding: 10px;
+  }
+  
+  td {
+    padding: 10px;
+    border: 1px solid gold;
+    background-color: #333;
+    color: gold;
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Aplicar color intercalado a las filas */
+  tr:nth-child(odd) td {
+    background-color: #333; /* Color para filas impares */
+  }
+  
+  tr:nth-child(even) td {
+    background-color: #444; /* Color para filas pares */
+  }
+  
+  button.remove-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: red;
+    font-size: 1.2rem;
+    padding: 0;
+    transition: color 0.3s ease;
+  }
+  
+  button.remove-btn:hover {
+    color: darkred;
+  }
+  
+  p {
+    color: gold;
+    font-style: italic;
+  }
+  
+  button.back-btn {
+    background-color: black;
+    color: gold;
+    border: 1px solid gold;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+  
+  button.back-btn:hover {
+    background-color: #f1c40f;
+    color:black;
+  }
+  

@@ -1,0 +1,255 @@
+/* Contenedor general del juego */
+.game-container {
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 80px;
+}
+
+/* Contenedor principal de la carta */
+.card-container {
+  margin: 20px auto;
+  max-width: 800px;
+  border: 2px solid goldenrod;
+  border-radius: 10px;
+  padding: 15px;
+  background-color: #fff7e6; /* Fondo cálido y claro */
+}
+
+/* Contenido de la carta */
+.card-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.card-image-container {
+  flex: 1;
+}
+
+.card-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Contenedor de puntajes */
+.scores-container {
+  flex: 1;
+  text-align: left;
+}
+
+.scores-container h3 {
+  font-size: 1.8em; /* Título más grande */
+  color: #333; /* Color oscuro para mejor visibilidad */
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.participant-score {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.participant-score label {
+  font-size: 1em;
+  font-weight: bold;
+  color: goldenrod; /* Dorado más claro */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); /* Sombra para mejor contraste */
+}
+
+.score-input {
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 5px;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.score-input:focus {
+  outline: none;
+  border-color: goldenrod;
+  box-shadow: 0 0 5px goldenrod;
+}
+
+/* Botones de navegación */
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: goldenrod;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:disabled {
+  background-color: lightgray;
+  cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+  background-color: darkgoldenrod;
+}
+
+/* Tabla de puntajes finales */
+.final-scores {
+  text-align: center;
+  margin: 20px auto;
+  padding: 20px;
+  border: 2px solid goldenrod;
+  border-radius: 10px;
+  background-color: #fff7e6; /* Fondo cálido */
+}
+
+/* Título de la tabla */
+.scores-title {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: goldenrod;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); /* Sombra ligera */
+}
+
+/* Botón de descarga */
+.btn-download {
+  background-color: goldenrod;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-bottom: 20px;
+}
+
+.btn-download:hover {
+  background-color: darkgoldenrod;
+}
+
+/* Estilo de la tabla */
+.final-scores table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px auto;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Celdas de la tabla */
+.final-scores table th,
+.final-scores table td {
+  border: 1px solid goldenrod;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Encabezado de la tabla */
+.final-scores table th {
+  background-color: goldenrod;
+  color: white;
+  font-weight: bold;
+}
+
+/* Alternar colores en las filas */
+.final-scores table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.final-scores table tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Estilos para el botón de regresar */
+button.back-btn {
+  background-color: black;
+  color: gold;
+  border: 1px solid gold;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+button.back-btn:hover {
+  background-color: #f1c40f;
+  color: black;
+}
+
+.podium-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.podium {
+  position: relative;
+  display: inline-block;
+  width: 300px;
+  height: auto;
+}
+
+.podium-image {
+  width: 100%;
+  height: auto;
+}
+
+.podium-level {
+  position: absolute;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: black;
+}
+
+.podium-first {
+  top: -20px; /* Ajusta este valor para moverlo más arriba */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.podium-second {
+  top: 20px; /* Ajusta este valor para moverlo más arriba */
+  left: 20%;
+  transform: translateX(-50%);
+}
+
+.podium-third {
+  top: 20px; /* Ajusta este valor para moverlo más arriba */
+  right: 20%;
+  transform: translateX(50%);
+}
+
+/* Diseño responsivo */
+@media (max-width: 768px) {
+  .card-content {
+    flex-direction: column;
+  }
+
+  .scores-container {
+    text-align: center;
+  }
+
+  .participant-score {
+    align-items: center;
+  }
+
+  .score-input {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .scores-container h3 {
+    font-size: 1.5em; /* Ajusta el tamaño del título en pantallas pequeñas */
+  }
+}

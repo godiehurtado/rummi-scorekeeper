@@ -1,1 +1,57 @@
-/* You can add global styles to this file, and also import other style files */
+/* Establecer fondo negro y texto dorado en toda la aplicación */
+body {
+    background-color: black;
+    color: gold;
+    font-family: 'Lora', sans-serif; /* Fuente moderna y estilizada */
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+/* Estilo para el encabezado */
+header {
+    padding: 20px;
+    background-color: black;
+    color: gold;
+}
+
+/* Estilo para el título */
+h1 {
+    font-size: 3rem;
+    margin: 0;
+    font-weight: bold;
+}
+
+/* Estilo para el pie de página */
+footer {
+    background-color: black;
+    color: gold;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+/* Media Query para pantallas pequeñas */
+@media (max-width: 600px) {
+    .app-name {
+      font-size: 2.5rem; /* Reducir el tamaño del título en pantallas pequeñas */
+    }
+  
+    .button-container {
+      flex-direction: column; /* Apilar los botones verticalmente */
+      gap: 10px;
+    }
+  
+    .image-welcome {
+      max-width: 100%; /* Asegura que la imagen no se desborde */
+      margin: 20px 0;
+    }
+  
+    .btn {
+      padding: 12px 22px; /* Reducir tamaño de botones en pantallas pequeñas */
+      font-size: 14px;
+    }
+  }
+  

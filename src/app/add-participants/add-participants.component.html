@@ -1,0 +1,32 @@
+<div class="add-participants-container">
+    <h2>Agregar Participantes</h2>
+    
+    <!-- Formulario para agregar participantes -->
+    <input type="text" [(ngModel)]="participantName" placeholder="Nombre del participante" />
+    <button (click)="addParticipant()">Agregar</button>
+    
+    <!-- Tabla de participantes -->
+    <table *ngIf="participants.length > 0">
+      <thead>
+        <tr>
+          <th>Participantes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let participant of participants; let i = index">
+          <td>
+            {{ participant }}
+            <button class="remove-btn" (click)="removeParticipant(i)">
+              <i class="fa fa-trash"></i> <!-- Icono de eliminar -->
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <p *ngIf="participants.length === 0">No hay participantes añadidos aún.</p>
+  
+    <!-- Botón de regresar -->
+    <button class="back-btn" (click)="goBack()">Regresar</button>
+  </div>
+  

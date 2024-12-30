@@ -1,0 +1,83 @@
+.game-settings-container {
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 80px;
+  }
+    
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 10px;
+}
+
+.card img {
+    width: auto; /* Asegura que la imagen ocupe todo el ancho de la tarjeta */
+    height: 150px; /* Ajusta la altura de la imagen, puedes modificarla según tu preferencia */
+    object-fit: cover; /* Asegura que la imagen se recorte de forma proporcional para llenar el espacio sin deformarse */
+    border-bottom: 1px solid #ddd; /* Opcional: agrega un borde debajo de la imagen para separar visualmente */
+    border-radius: 8px 8px 0 0; /* Opcional: redondea las esquinas superiores de la imagen */
+  }
+ 
+
+.card-content {
+  padding: 10px;
+}
+
+.card-content h3 {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+.card input[type="checkbox"] {
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 1200px) {
+  .card-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .card-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Estilos para el botón de regresar */
+button.back-btn {
+    background-color: black;
+    color: gold;
+    border: 1px solid gold;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+  
+  button.back-btn:hover {
+    background-color: #f1c40f;
+    color:black;
+  }
