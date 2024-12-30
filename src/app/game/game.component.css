@@ -253,3 +253,33 @@ button.back-btn:hover {
     font-size: 1.5em; /* Ajusta el tamaño del título en pantallas pequeñas */
   }
 }
+
+/* Tabla responsiva para dispositivos móviles */
+@media (max-width: 768px) {
+  .final-scores table th:not(:first-child):not(:last-child),
+  .final-scores table td:not(:first-child):not(:last-child) {
+    display: none; /* Oculta todas las columnas excepto la primera y la última */
+  }
+
+  .final-scores table th:first-child,
+  .final-scores table td:first-child {
+    text-align: left; /* Alinea a la izquierda los nombres de los participantes */
+  }
+
+  .final-scores table th:last-child,
+  .final-scores table td:last-child {
+    text-align: right; /* Alinea a la derecha los totales */
+  }
+
+  .final-scores table {
+    font-size: 14px; /* Reduce el tamaño de la fuente para mejor visibilidad */
+  }
+
+  .scores-title {
+    font-size: 18px; /* Reduce el tamaño del título */
+  }
+
+  .btn-download {
+    font-size: 14px; /* Ajusta el tamaño del botón de descarga */
+  }
+}
